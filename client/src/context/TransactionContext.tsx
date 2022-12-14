@@ -19,7 +19,8 @@ interface  TransactionContextCreateInterface{
         message: string;
     },
     handleChange: (e: any, name: any) => void,
-    sendTransaction: () => Promise<void>
+    sendTransaction: () => Promise<void>,
+    isloading: boolean
     
 }
 
@@ -148,7 +149,7 @@ export const TransactionProvider = ({children}:any) =>{
     },[])
 
     return(
-        <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction }}>
+        <TransactionContext.Provider value={{ connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction, isloading }}>
             {children}
         </TransactionContext.Provider>
     )
