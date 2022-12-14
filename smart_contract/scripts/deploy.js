@@ -6,6 +6,8 @@
 // // global scope, and execute the script.
 // const hre = require("hardhat");
 
+// const Web3 = require("web3");
+
 // async function main() {
 //   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
 //   const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
@@ -35,7 +37,7 @@ const main = async () =>{
   const Transactions = await hre.ethers.getContractFactory("Transactions");
   const transactions = await Transactions.deploy();
 
-  await Transactions.deployed();
+  await transactions.deployed();
 
   console.log("Transactions deployed to: ", transactions.address);
 }
@@ -51,3 +53,5 @@ const main = async () =>{
   }
 
   runMain();
+
+ 
